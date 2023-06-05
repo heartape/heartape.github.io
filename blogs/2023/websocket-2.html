@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>深入长连接-websocket | Heartape</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="favicon.ico">
+    <script src="/assets/js/bodyClick.js"></script>
+    <meta name="description" content="你也想起舞吗">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.a1a12807.css" as="style"><link rel="preload" href="/assets/js/app.d9656a17.js" as="script"><link rel="preload" href="/assets/js/3.97770734.js" as="script"><link rel="preload" href="/assets/js/1.d9ada6a7.js" as="script"><link rel="preload" href="/assets/js/55.1f3feb3c.js" as="script"><link rel="prefetch" href="/assets/js/10.3ba0b48a.js"><link rel="prefetch" href="/assets/js/11.d1ce82e2.js"><link rel="prefetch" href="/assets/js/12.abc33c56.js"><link rel="prefetch" href="/assets/js/13.1f1fd4c3.js"><link rel="prefetch" href="/assets/js/14.6c6ab763.js"><link rel="prefetch" href="/assets/js/15.44208822.js"><link rel="prefetch" href="/assets/js/16.0a0d27be.js"><link rel="prefetch" href="/assets/js/17.93cc0748.js"><link rel="prefetch" href="/assets/js/18.ecab2ba6.js"><link rel="prefetch" href="/assets/js/19.874f7d88.js"><link rel="prefetch" href="/assets/js/20.071cd385.js"><link rel="prefetch" href="/assets/js/21.7ae70a4a.js"><link rel="prefetch" href="/assets/js/22.e8326cd3.js"><link rel="prefetch" href="/assets/js/23.e2a53224.js"><link rel="prefetch" href="/assets/js/24.f921c972.js"><link rel="prefetch" href="/assets/js/25.a5a7af93.js"><link rel="prefetch" href="/assets/js/26.3bb61d12.js"><link rel="prefetch" href="/assets/js/27.090fc656.js"><link rel="prefetch" href="/assets/js/28.860a5464.js"><link rel="prefetch" href="/assets/js/29.a24f3733.js"><link rel="prefetch" href="/assets/js/30.4bcff373.js"><link rel="prefetch" href="/assets/js/31.e7038cae.js"><link rel="prefetch" href="/assets/js/32.4f065bb0.js"><link rel="prefetch" href="/assets/js/33.2aecc001.js"><link rel="prefetch" href="/assets/js/34.57e6726a.js"><link rel="prefetch" href="/assets/js/35.d2e758eb.js"><link rel="prefetch" href="/assets/js/36.03c09aeb.js"><link rel="prefetch" href="/assets/js/37.d664a969.js"><link rel="prefetch" href="/assets/js/38.6ffb68b3.js"><link rel="prefetch" href="/assets/js/39.8818f776.js"><link rel="prefetch" href="/assets/js/4.2b85a100.js"><link rel="prefetch" href="/assets/js/40.47171523.js"><link rel="prefetch" href="/assets/js/41.06dc9d52.js"><link rel="prefetch" href="/assets/js/42.4ead7f53.js"><link rel="prefetch" href="/assets/js/43.a273b094.js"><link rel="prefetch" href="/assets/js/44.55bad01c.js"><link rel="prefetch" href="/assets/js/45.4613ff13.js"><link rel="prefetch" href="/assets/js/46.671dc75b.js"><link rel="prefetch" href="/assets/js/47.06701395.js"><link rel="prefetch" href="/assets/js/48.12d68297.js"><link rel="prefetch" href="/assets/js/49.0aa29ed7.js"><link rel="prefetch" href="/assets/js/5.8b9dcbfc.js"><link rel="prefetch" href="/assets/js/50.5131ba9b.js"><link rel="prefetch" href="/assets/js/51.0936d500.js"><link rel="prefetch" href="/assets/js/52.ffa92698.js"><link rel="prefetch" href="/assets/js/53.e6c0bc89.js"><link rel="prefetch" href="/assets/js/54.3afc721f.js"><link rel="prefetch" href="/assets/js/56.c7140182.js"><link rel="prefetch" href="/assets/js/57.4179174e.js"><link rel="prefetch" href="/assets/js/58.593b04a6.js"><link rel="prefetch" href="/assets/js/59.f99a659d.js"><link rel="prefetch" href="/assets/js/6.f1dd7dd8.js"><link rel="prefetch" href="/assets/js/60.1971a241.js"><link rel="prefetch" href="/assets/js/61.01a88143.js"><link rel="prefetch" href="/assets/js/62.308cf4df.js"><link rel="prefetch" href="/assets/js/63.a9d5acf2.js"><link rel="prefetch" href="/assets/js/64.4997c4ae.js"><link rel="prefetch" href="/assets/js/65.904c85ea.js"><link rel="prefetch" href="/assets/js/66.a0010ef7.js"><link rel="prefetch" href="/assets/js/67.702a65b0.js"><link rel="prefetch" href="/assets/js/68.23994388.js"><link rel="prefetch" href="/assets/js/69.e0f1dbee.js"><link rel="prefetch" href="/assets/js/7.038a3598.js"><link rel="prefetch" href="/assets/js/70.ccb31162.js"><link rel="prefetch" href="/assets/js/71.cc5b0f52.js"><link rel="prefetch" href="/assets/js/72.cd8215da.js"><link rel="prefetch" href="/assets/js/73.9c53f12b.js"><link rel="prefetch" href="/assets/js/74.12985e26.js"><link rel="prefetch" href="/assets/js/75.135a1687.js"><link rel="prefetch" href="/assets/js/76.cb2252ad.js"><link rel="prefetch" href="/assets/js/77.252fac8d.js"><link rel="prefetch" href="/assets/js/78.8ff67de3.js"><link rel="prefetch" href="/assets/js/79.dc6c4d2e.js"><link rel="prefetch" href="/assets/js/8.6361775d.js"><link rel="prefetch" href="/assets/js/80.6f61376e.js"><link rel="prefetch" href="/assets/js/81.6c79a603.js"><link rel="prefetch" href="/assets/js/82.fd24bd5d.js"><link rel="prefetch" href="/assets/js/83.74d5c768.js"><link rel="prefetch" href="/assets/js/9.49176af2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a1a12807.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-dad8a512><div data-v-dad8a512><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-dad8a512 data-v-dad8a512><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-dad8a512 data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>Heartape</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Heartape</span>
+            
+          <span data-v-64685f0e>2022 - </span>
+          2023
+        </a></span></div></div> <div class="hide" data-v-dad8a512><header class="navbar" data-v-dad8a512><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/image/hero.png" alt="Heartape" class="logo"> <span class="site-name">Heartape</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      技术
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/docs/java/java8.html" class="nav-link"><i class="iconfont undefined"></i>
+  JAVA
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/frame/spring5.html" class="nav-link"><i class="iconfont undefined"></i>
+  框架
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/source/springSource.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/middleware/mysql.html" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/tool/git.html" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光走过了哪里
+</a></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-account"></i>
+      我在哪里
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/heartape" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/heartape" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://space.bilibili.com/247318527" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-bilibili"></i>
+  Bilibili
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="mailto:heartape@163.com" class="nav-link external"><i class="iconfont reco-mail"></i>
+  163
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-dad8a512></div> <aside class="sidebar" data-v-dad8a512><div class="personal-info-wrapper" data-v-ca798c94 data-v-dad8a512><img src="/assets/image/hero.png" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    Heartape
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>47</h3> <h6 data-v-ca798c94>文章</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>48</h3> <h6 data-v-ca798c94>标签</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      技术
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/docs/java/java8.html" class="nav-link"><i class="iconfont undefined"></i>
+  JAVA
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/frame/spring5.html" class="nav-link"><i class="iconfont undefined"></i>
+  框架
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/source/springSource.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/middleware/mysql.html" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/tool/git.html" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光走过了哪里
+</a></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-account"></i>
+      我在哪里
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/heartape" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/heartape" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://space.bilibili.com/247318527" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-bilibili"></i>
+  Bilibili
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="mailto:heartape@163.com" class="nav-link external"><i class="iconfont reco-mail"></i>
+  163
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>深入长连接-websocket</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Heartape</span>
+            
+          <span data-v-64685f0e>2022 - </span>
+          2023
+        </a></span></div></div> <div data-v-dad8a512><main class="page"><div class="page-title" style="display:none;"><h1>深入长连接-websocket</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>Heartape</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2023-06-05</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>websocket</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="_1-简介"><a href="#_1-简介" class="header-anchor">#</a> 1.简介</h2> <p>websocket集实时性与性能于一身，在im领域有其一席之地。java目前一般是采用netty和spring来实现。</p> <h2 id="_2-netty"><a href="#_2-netty" class="header-anchor">#</a> 2.netty</h2> <p>如果要实现websocket，netty当然是最好的选择之一。性能强劲，没有多余的代理，代码设计简洁优雅都是他的优点。</p> <blockquote><p><a href="https://github.com/heartape/study/tree/main/frame/netty/netty-websocket" target="_blank" rel="noopener noreferrer">github<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <p>代码没有什么难点，只不过在返回消息时需要包装成<code>TextWebSocketFrame</code>，不然会收不到消息。。。</p> <h2 id="_3-spring"><a href="#_3-spring" class="header-anchor">#</a> 3.spring</h2> <p>虽然netty很优秀，但是考虑到spring强大的生态，如果不是作为一家公司的核心产品的话，spring将是首选，因为不需要造轮子可以快速开发。</p> <blockquote><p><a href="https://github.com/heartape/study/tree/main/frame/spring-websocket" target="_blank" rel="noopener noreferrer">github<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <p>代码没有使用注解的方式，与netty的代码几乎一致，包括返回消息也需要包装一下。
+spring也提供了java标准注解的实现 <a href="/blogs/2023/websocket.html">上一篇文章</a></p> <h2 id="_4-问题"><a href="#_4-问题" class="header-anchor">#</a> 4.问题</h2> <p>如果使用websocket协议搭建im平台的话，不得不考虑鉴权的问题。
+网络上的说法无非是将token放到param或者Sec-WebSocket-Protocol中，因为协议中其他请求头都不可以修改。
+放到param有安全性问题，而放到Sec-WebSocket-Protocol则与其设计含义完全相悖，是极其不规范的操作。
+从这里也可以看出，websocket在设计上就不打算在建立连接时做复杂操作。</p> <p>我也找了一些商业产品，文档内介绍的做法是将token放到消息体内，也算是当前最合理的方案。</p> <h2 id="_5-stomp"><a href="#_5-stomp" class="header-anchor">#</a> 5.stomp</h2> <h3 id="_1-简介-2"><a href="#_1-简介-2" class="header-anchor">#</a> 1.简介</h3> <p>鉴于上面的问题，用stomp是更为适合的方案。
+STOMP，Streaming Text Orientated Message Protocol，是流文本定向消息协议，是一种为MOM(Message Oriented Middleware，面向消息的中间件)设计的简单文本协议。
+很多消息中间件支持该协议，可以提高应用的兼容性和扩展性（spring就可以代理到外部中间件）。</p> <h3 id="_2-报文"><a href="#_2-报文" class="header-anchor">#</a> 2.报文</h3> <p>握手请求</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>GET ws://127.0.0.1:8088/chat HTTP/1.1
+Host: 127.0.0.1:8088
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+Upgrade: websocket
+Origin: http://localhost:63342
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: m9whBt/NBNR8E2D56W6PaA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+Sec-WebSocket-Protocol: v10.stomp, v11.stomp
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>握手响应</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>HTTP/1.1 101
+Upgrade: websocket
+Connection: upgrade
+Sec-WebSocket-Accept: hJceVmUrjTMSP2Zgrug9PFS0YMA=
+Sec-WebSocket-Protocol: v10.stomp
+Sec-WebSocket-Extensions: permessage-deflate;client_max_window_bits=15
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Date: Mon, 05 Jun 2023 01:27:44 GMT
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>连接请求</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>CONNECT
+Authorization:Bearer xxx
+accept-version:1.1,1.0
+heart-beat:20000,0
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>连接响应</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>CONNECTED
+version:1.1
+heart-beat:0,0
+user-name:1111
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>消息</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>MESSAGE
+destination:/receive/group/message
+content-type:text/plain;charset=UTF-8
+subscription:1111
+message-id:49eede7f-41de-6cd5-3503-d9e4a7989bae-0
+content-length:10
+
+hello 1111
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="_3-解析"><a href="#_3-解析" class="header-anchor">#</a> 3.解析</h3> <p>从http报文<code>Sec-WebSocket-Protocol: v10.stomp, v11.stomp</code>来看，stomp是作为websocket的一个子协议工作的。
+stomp规定了消息的格式，而websocket并没有规定。</p> <p>握手完成后，stomp客户端提供了3个操作:</p> <ul><li>CONNECT</li> <li>SUBSCRIBE</li> <li>SEND</li></ul> <p>对应服务端2种响应:</p> <ul><li>CONNECTED</li> <li>MESSAGE</li></ul> <h3 id="_4-鉴权"><a href="#_4-鉴权" class="header-anchor">#</a> 4.鉴权</h3> <p>stomp允许在消息中添加请求头，但并非在握手阶段传递，这一点因为其作为websocket子协议，两者一致。握手完成后会在 <code>CONNECT</code> 消息添加
+<code>Authorization:Bearer xxx</code> -&gt; <code>user-name:1111</code>
+在提供token并解析后，spring会自动将user-name赋值并返回，如果是jwt就是subject的值。同时stomp客户端建议使用这个值作为订阅id。</p> <h3 id="_5-实现"><a href="#_5-实现" class="header-anchor">#</a> 5.实现</h3> <blockquote><p><a href="https://github.com/netty/netty/blob/4.1/example/src/main/java/io/netty/example/stomp" target="_blank" rel="noopener noreferrer">netty-example<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <blockquote><p><a href="https://github.com/heartape/study/tree/main/frame/spring-websocket" target="_blank" rel="noopener noreferrer">github-spring-websocket-stomp<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2023/6/5 06:19:46</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="Sakura" data-v-248d85d6><canvas id="canvas_sakura" style="z-index:2;" data-v-248d85d6></canvas></div><!----><div class="RibbonAnimation"></div><div id="goTop" class="hide-cat" data-v-bf92849a></div><div></div><div id="live2d-widget" class="live2d-widget-container" style="position:fixed;left:65px;bottom:0px;width:135px;height:300px;z-index:99999;opacity:1;pointer-events:none;"><canvas id="live2d_canvas" width="135" height="300" class="live2d_canvas" style="position:absolute;left:0px;top:0px;width:135px;height:300px;"></canvas></div></div></div>
+    <script src="/assets/js/app.d9656a17.js" defer></script><script src="/assets/js/3.97770734.js" defer></script><script src="/assets/js/1.d9ada6a7.js" defer></script><script src="/assets/js/55.1f3feb3c.js" defer></script>
+  </body>
+</html>
