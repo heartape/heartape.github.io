@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>汇编语言（第4版） 王爽 | Heartape</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="favicon.ico">
+    <script src="/assets/js/bodyClick.js"></script>
+    <meta name="description" content="你也想起舞吗">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.a1a12807.css" as="style"><link rel="preload" href="/assets/js/app.0b2a8564.js" as="script"><link rel="preload" href="/assets/js/3.0afba0d4.js" as="script"><link rel="preload" href="/assets/js/1.d9ada6a7.js" as="script"><link rel="preload" href="/assets/js/51.d78ac180.js" as="script"><link rel="prefetch" href="/assets/js/10.3ba0b48a.js"><link rel="prefetch" href="/assets/js/11.d1ce82e2.js"><link rel="prefetch" href="/assets/js/12.abc33c56.js"><link rel="prefetch" href="/assets/js/13.1f1fd4c3.js"><link rel="prefetch" href="/assets/js/14.6c6ab763.js"><link rel="prefetch" href="/assets/js/15.44208822.js"><link rel="prefetch" href="/assets/js/16.0a0d27be.js"><link rel="prefetch" href="/assets/js/17.93cc0748.js"><link rel="prefetch" href="/assets/js/18.ecab2ba6.js"><link rel="prefetch" href="/assets/js/19.874f7d88.js"><link rel="prefetch" href="/assets/js/20.071cd385.js"><link rel="prefetch" href="/assets/js/21.7ae70a4a.js"><link rel="prefetch" href="/assets/js/22.e8326cd3.js"><link rel="prefetch" href="/assets/js/23.e2a53224.js"><link rel="prefetch" href="/assets/js/24.f921c972.js"><link rel="prefetch" href="/assets/js/25.a5a7af93.js"><link rel="prefetch" href="/assets/js/26.3bb61d12.js"><link rel="prefetch" href="/assets/js/27.090fc656.js"><link rel="prefetch" href="/assets/js/28.860a5464.js"><link rel="prefetch" href="/assets/js/29.a24f3733.js"><link rel="prefetch" href="/assets/js/30.4bcff373.js"><link rel="prefetch" href="/assets/js/31.e7038cae.js"><link rel="prefetch" href="/assets/js/32.4f065bb0.js"><link rel="prefetch" href="/assets/js/33.5ad700a1.js"><link rel="prefetch" href="/assets/js/34.57e6726a.js"><link rel="prefetch" href="/assets/js/35.d2e758eb.js"><link rel="prefetch" href="/assets/js/36.c4db7e59.js"><link rel="prefetch" href="/assets/js/37.c6d0b314.js"><link rel="prefetch" href="/assets/js/38.8ac0d36a.js"><link rel="prefetch" href="/assets/js/39.c20ac679.js"><link rel="prefetch" href="/assets/js/4.2b85a100.js"><link rel="prefetch" href="/assets/js/40.4ef4381c.js"><link rel="prefetch" href="/assets/js/41.e563d22c.js"><link rel="prefetch" href="/assets/js/42.ec4052a4.js"><link rel="prefetch" href="/assets/js/43.53320dab.js"><link rel="prefetch" href="/assets/js/44.8dadd880.js"><link rel="prefetch" href="/assets/js/45.38fd30b7.js"><link rel="prefetch" href="/assets/js/46.aa074eb5.js"><link rel="prefetch" href="/assets/js/47.4ad018a8.js"><link rel="prefetch" href="/assets/js/48.d89fc9d7.js"><link rel="prefetch" href="/assets/js/49.ccdb4a96.js"><link rel="prefetch" href="/assets/js/5.8b9dcbfc.js"><link rel="prefetch" href="/assets/js/50.b520e3e6.js"><link rel="prefetch" href="/assets/js/52.3e1e976e.js"><link rel="prefetch" href="/assets/js/53.9f3f47b1.js"><link rel="prefetch" href="/assets/js/54.335cf811.js"><link rel="prefetch" href="/assets/js/55.a4dee706.js"><link rel="prefetch" href="/assets/js/56.f1e5b4a6.js"><link rel="prefetch" href="/assets/js/57.cbf94e38.js"><link rel="prefetch" href="/assets/js/58.50ecd084.js"><link rel="prefetch" href="/assets/js/59.225a01bc.js"><link rel="prefetch" href="/assets/js/6.f1dd7dd8.js"><link rel="prefetch" href="/assets/js/60.9a63f92a.js"><link rel="prefetch" href="/assets/js/61.7c6b2e32.js"><link rel="prefetch" href="/assets/js/62.a2783ca0.js"><link rel="prefetch" href="/assets/js/63.057c4d25.js"><link rel="prefetch" href="/assets/js/64.7de191f4.js"><link rel="prefetch" href="/assets/js/65.91925f05.js"><link rel="prefetch" href="/assets/js/66.386c3a04.js"><link rel="prefetch" href="/assets/js/67.45173504.js"><link rel="prefetch" href="/assets/js/68.a3d7eaea.js"><link rel="prefetch" href="/assets/js/69.dd2a346d.js"><link rel="prefetch" href="/assets/js/7.038a3598.js"><link rel="prefetch" href="/assets/js/70.1196465a.js"><link rel="prefetch" href="/assets/js/71.80a43058.js"><link rel="prefetch" href="/assets/js/72.568980c3.js"><link rel="prefetch" href="/assets/js/73.af6d0e6c.js"><link rel="prefetch" href="/assets/js/74.4f6f8d9a.js"><link rel="prefetch" href="/assets/js/75.44e8471d.js"><link rel="prefetch" href="/assets/js/76.08ae9e57.js"><link rel="prefetch" href="/assets/js/77.0f944907.js"><link rel="prefetch" href="/assets/js/78.a561a339.js"><link rel="prefetch" href="/assets/js/79.8fbde64a.js"><link rel="prefetch" href="/assets/js/8.6361775d.js"><link rel="prefetch" href="/assets/js/80.a3c745bc.js"><link rel="prefetch" href="/assets/js/81.be475f3c.js"><link rel="prefetch" href="/assets/js/82.9fc666f1.js"><link rel="prefetch" href="/assets/js/83.f39045db.js"><link rel="prefetch" href="/assets/js/84.c746f063.js"><link rel="prefetch" href="/assets/js/9.49176af2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a1a12807.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-dad8a512><div data-v-dad8a512><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-dad8a512 data-v-dad8a512><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-dad8a512 data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>Heartape</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Heartape</span>
+            
+          <span data-v-64685f0e>2022 - </span>
+          2023
+        </a></span></div></div> <div class="hide" data-v-dad8a512><header class="navbar" data-v-dad8a512><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/image/hero.png" alt="Heartape" class="logo"> <span class="site-name">Heartape</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      技术
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/docs/java/java8.html" class="nav-link"><i class="iconfont undefined"></i>
+  JAVA
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/frame/spring5.html" class="nav-link"><i class="iconfont undefined"></i>
+  框架
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/source/springSource.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/middleware/mysql.html" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/tool/git.html" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光走过了哪里
+</a></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-account"></i>
+      我在哪里
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/heartape" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/heartape" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://space.bilibili.com/247318527" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-bilibili"></i>
+  Bilibili
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="mailto:heartape@163.com" class="nav-link external"><i class="iconfont reco-mail"></i>
+  163
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-dad8a512></div> <aside class="sidebar" data-v-dad8a512><div class="personal-info-wrapper" data-v-ca798c94 data-v-dad8a512><img src="/assets/image/hero.png" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    Heartape
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>48</h3> <h6 data-v-ca798c94>文章</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>49</h3> <h6 data-v-ca798c94>标签</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      技术
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/docs/java/java8.html" class="nav-link"><i class="iconfont undefined"></i>
+  JAVA
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/frame/spring5.html" class="nav-link"><i class="iconfont undefined"></i>
+  框架
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/source/springSource.html" class="nav-link"><i class="iconfont undefined"></i>
+  源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/middleware/mysql.html" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/docs/tool/git.html" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光走过了哪里
+</a></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-account"></i>
+      我在哪里
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/heartape" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/heartape" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  Gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://space.bilibili.com/247318527" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-bilibili"></i>
+  Bilibili
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="mailto:heartape@163.com" class="nav-link external"><i class="iconfont reco-mail"></i>
+  163
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>汇编语言（第4版） 王爽</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>Heartape</span>
+            
+          <span data-v-64685f0e>2022 - </span>
+          2023
+        </a></span></div></div> <div data-v-dad8a512><main class="page"><div class="page-title" style="display:none;"><h1>汇编语言（第4版） 王爽</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>Heartape</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2023-09-03</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>masm</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="_1-环境搭建"><a href="#_1-环境搭建" class="header-anchor">#</a> 1.环境搭建</h2> <p>工欲善其事，必先利其器。</p> <h3 id="_1-软件安装"><a href="#_1-软件安装" class="header-anchor">#</a> 1.软件安装</h3> <ol><li>dosbox</li> <li>下载masm.exe、link.exe、debug.exe(网上一大堆)</li> <li>sublime(vscode)</li></ol> <p>3者都可以在官网轻松找到。安装也是默认即可。
+一开始每次都是手动执行命令编译执行代码，觉得很麻烦，就通过网络了解到了sublime也可以编译。</p> <p>配置sublime的步骤：</p> <ol><li>安装代码美化插件(略)</li> <li>配置编译菜单</li> <li>编写编译脚本</li></ol> <p>配置编译菜单详细做法(sublime)：</p> <ul><li>tools -&gt; build system -&gt; new build system</li> <li>输入以下代码并保存文件名为 Assembly.sublime-build</li> <li>文件在路径 C:\Users\heartape\AppData\Roaming\Sublime Text 3\Packages\User</li></ul> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;cmd&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;echo&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;\&quot;选择其他编译选项\&quot;&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;file_regex&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;selector&quot;</span><span class="token operator">:</span> <span class="token string">&quot;source.asm&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;encoding&quot;</span><span class="token operator">:</span><span class="token string">&quot;cp936&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;variants&quot;</span><span class="token operator">:</span>  
+     <span class="token punctuation">[</span>   
+          <span class="token punctuation">{</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;build&quot;</span><span class="token punctuation">,</span> 
+                <span class="token property">&quot;cmd&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;D:\\MASM\\asm-build.bat&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;$file_base_name&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;shell&quot;</span><span class="token operator">:</span><span class="token boolean">true</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;debug&quot;</span><span class="token punctuation">,</span> 
+                <span class="token property">&quot;cmd&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;D:\\MASM\\asm-debug.bat&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;$file_base_name&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;shell&quot;</span><span class="token operator">:</span><span class="token boolean">true</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;run&quot;</span><span class="token punctuation">,</span> 
+                <span class="token property">&quot;cmd&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;D:\\MASM\\asm-run.bat&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;$file_base_name&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;shell&quot;</span><span class="token operator">:</span><span class="token boolean">true</span>
+          <span class="token punctuation">}</span>
+     <span class="token punctuation">]</span>  
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>脚本：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>@echo off
+<span class="token comment"># build</span>
+D:<span class="token punctuation">\</span>program<span class="token punctuation">\</span>DOSBox-0.74<span class="token punctuation">\</span>DOSBox.exe <span class="token parameter variable">-c</span> <span class="token string">&quot;masm %1;&quot;</span> <span class="token parameter variable">-c</span> <span class="token string">&quot;link %1;&quot;</span><span class="token punctuation">;</span>
+<span class="token comment"># debug</span>
+D:<span class="token punctuation">\</span>program<span class="token punctuation">\</span>DOSBox-0.74<span class="token punctuation">\</span>DOSBox.exe <span class="token parameter variable">-c</span> <span class="token string">&quot;masm %1;&quot;</span> <span class="token parameter variable">-c</span> <span class="token string">&quot;link %1;&quot;</span> <span class="token parameter variable">-c</span> <span class="token string">&quot;debug %1.exe&quot;</span><span class="token punctuation">;</span>
+<span class="token comment"># run</span>
+D:<span class="token punctuation">\</span>program<span class="token punctuation">\</span>DOSBox-0.74<span class="token punctuation">\</span>DOSBox.exe <span class="token parameter variable">-c</span> <span class="token string">&quot;masm %1;&quot;</span> <span class="token parameter variable">-c</span> <span class="token string">&quot;link %1;&quot;</span> <span class="token parameter variable">-c</span> <span class="token string">&quot;%1.exe&quot;</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>tools -&gt; builds 即可开始编译了</p> <h2 id="_2-基本指令"><a href="#_2-基本指令" class="header-anchor">#</a> 2.基本指令</h2> <h3 id="_1-debug指令"><a href="#_1-debug指令" class="header-anchor">#</a> 1.debug指令</h3> <div class="language-text line-numbers-mode"><pre class="language-text"><code>d	查看内存
+a	写入汇编指令
+u	查看指令
+r	寄存器
+t	执行一次
+g	执行到
+p	自动执行loop
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="_2-寄存器"><a href="#_2-寄存器" class="header-anchor">#</a> 2.寄存器</h3> <div class="language-text line-numbers-mode"><pre class="language-text"><code>AX	Accumulator	累加器，常用于存放算术、逻辑运算中的操作数或结果。另外，所有的I/O指令都要使用累加器与外设接口传递数据。在做双字长乘除法运算时，DX与AX合起来存放一个双字长数(32位)，其中DX存放高16位，AX存放低16位。	
+BX	Base		基址寄存器，常用来存放访问内存时的地址。
+CX	Count		计数寄存器，在循环、串操作指令中用作计数器。
+DX	Data		数据寄存器，在寄存器间接寻址中的I/O指令中存放I/O端口的地址。
+
+CS	Code	代码区的段地址	
+DS	Data	程序数据区的段地址	
+SS	Stack	堆栈数据区的段地址	
+ES	Extra	辅助数据区的段地址
+
+SP	Stack Pointer		存放堆栈指针
+BP	Base Pointer		存放基址指针	
+SI	Source Index		源索引用于自增变址	
+DI	Destination Index	目标索引用于自减变址
+
+IP	Instruction Pointer		存放指令指针	
+PSW	Program status words	程序状态字（flag）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="_3-指令"><a href="#_3-指令" class="header-anchor">#</a> 3.指令</h3> <p>申请内存</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>db	1字节(byte)
+dw	2字节(word)
+dd	4字节(double word)
+db 3 dup (0)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>程序返回</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>mov ax,4c00h
+int 21h
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>运算</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>ADD
+SUB
+MUL
+DIV	ax -&gt; al...ah; (dx + ax) -&gt; ax...dx
+INC
+DEC
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>转移指令</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code># call = jmp + push ip(cs)
+jmp
+jmp short
+call s0
+call ax
+call far ptr s0
+call word ptr ds:[0]
+ret 	子程序返回
+iret	中断返回
+jcxz ok(等于0)
+
+cmp ah,'z'
+je s(等于)
+jne s(不等于)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>其他</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code># 复制
+cld
+rep movsb:	ds:si -&gt;(长度cx) es:di
+
+端口获取数据
+out 70h,al
+in al,71h
+
+设置中断标志
+sti -&gt; IF=1
+cli -&gt; IF=0(屏蔽中断,常用于原子操作)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="_4-机制"><a href="#_4-机制" class="header-anchor">#</a> 4.机制</h2> <h3 id="_1-键盘"><a href="#_1-键盘" class="header-anchor">#</a> 1.键盘</h3> <div class="language-text line-numbers-mode"><pre class="language-text"><code>0040:17字节(8位)记录了控制键和切换键的状态
+
+0：右shift状态，置1表示按下右shift键；
+1：左shift状态，置1表示按下左shift键；
+2：Ctrl状态，置1表示按下Ctrl键；
+3：Alt状态，置1表示按下Alt键；
+4：ScrollLock状态，置1表示Scroll指示灯亮；
+5：NumLock状态，置1表示小键盘输入的是数字；
+6：CapsLock状态，置1表示输入大写字母；
+7：Insert状态，置1表示处于删除态。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="_2-显存"><a href="#_2-显存" class="header-anchor">#</a> 2.显存</h3> <p>字符属性</p> <div class="language-text line-numbers-mode"><pre class="language-text"><code>7 	 	BL 	闪烁
+6,5,4 	RGB 背景
+3 	 	I 	高亮
+2,1,0 	RGB 前景
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="_5-实验"><a href="#_5-实验" class="header-anchor">#</a> 5.实验</h2> <h3 id="_10-1"><a href="#_10-1" class="header-anchor">#</a> 10-1</h3> <div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code
+
+data segment
+    db 'Welcome to masm!',0
+data ends
+
+code segment
+start:	
+		mov dh,8
+		mov dl,3
+		mov cl,2
+		mov ax,data
+		mov ds,ax
+		mov si,0
+		call show_str
+
+		mov ax,4c00h
+		int 21h
+
+show_str:
+		push ax
+		push bx
+		push cx
+		push si
+		push es
+		push dx
+		; 显存段地址
+		mov ax,0b800h
+		mov es,ax
+		; 显存地址偏移
+		mov ax,80
+		mul dh
+		mov dh,0
+		add ax,dx
+		inc ax
+		mov bx,ax
+		mov dl,cl
+
+change:
+		mov cl,[si]
+		mov ch,0
+		jcxz ok
+		mov byte ptr es:[bx],cl
+		mov byte ptr es:[bx + 1],dl
+		add bx,2
+		inc si
+		jmp short change
+
+ok:		
+		pop dx
+		pop es
+		pop si
+		pop cx
+		pop bx
+		pop ax
+		ret
+
+code ends
+
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br></div></div><h3 id="_10-2"><a href="#_10-2" class="header-anchor">#</a> 10-2</h3> <div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code,ss:stack
+stack segment
+    dw 0
+stack ends
+ 
+code segment
+start:
+ 
+    mov ax,stack
+    mov ss,ax
+    mov sp,10H
+ 
+    mov ax,4241H
+    mov dx,000FH
+    mov cx,0AH
+    call divdw
+
+    mov ax,4c00H
+    int 21H
+ 
+divdw:
+	push bx
+
+	; 计算高位
+	mov bx,ax
+	mov ax,dx
+	mov dx,0
+	div cx
+
+	; 高位商压栈
+	push ax
+
+	; 计算低位
+	mov ax,bx
+	div cx
+
+	; 整理结果
+	mov cx,dx
+	pop dx
+
+	pop bx
+ 	ret
+    
+code ends
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br></div></div><h3 id="_10-3"><a href="#_10-3" class="header-anchor">#</a> 10-3</h3> <div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code
+
+data segment
+    db 10 dup (0)
+data ends
+
+code segment
+start:	
+		mov ax,data
+		mov ds,ax
+		mov ax,12666
+		mov si,0
+		call dtoc
+
+		; 读取
+		mov dh,8
+		mov dl,3
+		mov cl,2
+		call show_str
+
+		mov ax,4c00h
+		int 21h
+
+dtoc:
+		push bx
+		push cx
+		push dx
+		; data指针
+		mov si,10
+		; 除数
+		mov bx,10
+		
+s:		
+		mov dx,0
+		div bx
+		; ascll, 数字转换为字符,因为除数是10,所以余数在一个字节范围内
+		add dl,48
+		dec si
+		mov byte ptr [si],dl
+		mov cx,ax
+		jcxz s0
+		jmp short s
+
+s0:
+		pop dx
+		pop cx
+		pop bx
+		ret
+
+show_str:
+		push ax
+		push bx
+		push cx
+		push si
+		push es
+		push dx
+		; 显存段地址
+		mov ax,0b800h
+		mov es,ax
+		; 显存地址偏移
+		mov ax,80
+		mul dh
+		mov dh,0
+		add ax,dx
+		inc ax
+		mov bx,ax
+		mov dl,cl
+
+change:
+		mov cl,[si]
+		mov ch,0
+		jcxz ok
+		mov byte ptr es:[bx],cl
+		mov byte ptr es:[bx + 1],dl
+		add bx,2
+		inc si
+		jmp short change
+
+ok:		
+		pop dx
+		pop es
+		pop si
+		pop cx
+		pop bx
+		pop ax
+		ret
+
+code ends
+
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br></div></div><h3 id="_11"><a href="#_11" class="header-anchor">#</a> 11</h3> <div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code
+
+data segment
+    db 'Welcome to masm!',0
+data ends
+
+code segment
+start:	
+		mov dh,8
+		mov dl,3
+		mov cl,2
+		mov ax,data
+		mov ds,ax
+		mov si,0
+		call show_str
+
+		mov ax,4c00h
+		int 21h
+
+show_str:
+		push ax
+		push bx
+		push cx
+		push si
+		push es
+		push dx
+		; 显存段地址
+		mov ax,0b800h
+		mov es,ax
+		; 显存地址偏移
+		mov ax,80
+		mul dh
+		mov dh,0
+		add ax,dx
+		inc ax
+		mov bx,ax
+		mov dl,cl
+
+change:
+		mov cl,[si]
+		mov ch,0
+		jcxz ok
+		mov byte ptr es:[bx],cl
+		mov byte ptr es:[bx + 1],dl
+		add bx,2
+		inc si
+		jmp short change
+
+ok:		
+		pop dx
+		pop es
+		pop si
+		pop cx
+		pop bx
+		pop ax
+		ret
+
+code ends
+
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br></div></div><h3 id="_12"><a href="#_12" class="header-anchor">#</a> 12</h3> <div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code
+
+code segment
+start:	
+	mov ax,cs
+	mov ds,ax
+	mov si,offset do0
+
+	mov ax,0
+	mov es,ax
+	mov di,200h
+
+	mov cx,offset do0end - offset do0
+	cld ;设置si di循环方向
+	rep movsb
+
+	mov ax,0
+	mov es,ax
+	mov word ptr es:[0],200h
+	mov word ptr es:[2],0
+
+	mov ax,4c00h
+	int 21h
+
+do0:
+	jmp short do0start
+	db &quot;divide error!!!&quot;
+
+do0start:
+	mov ax,cs
+	mov ds,ax
+	mov si,202h
+
+	mov ax,0b800h
+	mov es,ax
+	mov di,12*160+36*2
+
+	mov cx,15
+	
+s:
+	mov al,[si]
+	mov ah,2
+	mov es:[di],ax
+	inc si
+	add di,2
+	loop s
+
+	mov ax,4c00h
+	int 21h
+
+do0end:
+	nop
+code ends
+
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br></div></div><div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code
+
+code segment
+start:
+	mov ax,1000h
+	mov bh,1
+	div bh
+
+	mov ax,4c00h
+	int 21h
+code ends
+
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="_13"><a href="#_13" class="header-anchor">#</a> 13</h3> <div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code
+
+code segment
+start:
+	push ds
+	push es
+
+	mov ax,cs
+	mov ds,ax
+	mov si,offset do0
+
+	mov ax,0
+	mov es,ax
+	mov di,200h
+
+	mov cx,offset do0end - offset do0
+	cld
+	rep movsb
+
+	mov ax,0
+	mov es,ax
+	mov word ptr es:[7ch*4],200h
+	mov word ptr es:[7ch*4+2],0
+
+	pop es
+	pop ds
+
+	mov ax,4c00h
+	int 21h
+
+do0:
+	push ax
+	push cx
+	push ds
+	push es
+
+	mov ax,0b800h
+	mov es,ax
+	mov di,12*160+36*2
+
+s:
+	mov ch,0
+	mov cl,[si]
+	jcxz ok
+	mov ch,3
+	mov es:[di],cx
+	inc si
+	add di,2
+	jmp short s
+
+ok:
+	pop es
+	pop ds
+	pop cx
+	pop ax
+	iret
+
+do0end:
+	nop
+code ends
+
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br></div></div><div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code
+
+data segment
+	db &quot;welcome to masm!&quot;,0
+data ends
+
+code segment
+start:	
+	mov dh,10
+	mov dl,10
+	mov cl,2
+
+	mov ax,data
+	mov ds,ax
+	mov si,0
+
+	int 7ch
+	mov ax,4c00h
+	int 21h
+code ends
+
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="_14"><a href="#_14" class="header-anchor">#</a> 14</h3> <div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code
+data segment
+	db 17 dup(0)
+data ends
+code segment
+start:
+	mov ax,data
+	mov ds,ax
+	mov si,0
+	; 年
+	mov al,9
+	call far ptr do_move
+	
+	mov byte ptr ds:[si],47
+	inc si
+	; 月
+	mov al,8
+	call far ptr do_move
+
+	mov byte ptr ds:[si],47
+	inc si
+	; 日
+	mov al,7
+	call far ptr do_move
+
+	mov byte ptr ds:[si],32
+	inc si
+
+	; 时
+	mov al,4
+	call far ptr do_move
+
+	mov byte ptr ds:[si],58
+	inc si
+	; 分
+	mov al,2
+	call far ptr do_move
+
+	mov byte ptr ds:[si],58
+	inc si
+	; 秒
+	mov al,0
+	call far ptr do_move
+
+	jmp short do_show
+
+do_move:
+	out 70h,al
+	in al,71h
+	mov ah,al
+	mov cl,4
+	shr ah,cl
+	and al,00001111b
+	add ah,30h
+	add al,30h
+	mov ds:[si],ah
+	mov ds:[si+1],al
+	add si,2
+	ret
+
+do_show:
+	mov si,0
+	mov ax,0b800h
+	mov es,ax
+	mov di,12*160+36*2
+	mov cx,17
+
+s:
+	mov al,[si]
+	mov ah,3
+	mov es:[di],ax
+	inc si
+	add di,2
+	loop s
+
+ok:
+	mov ax,4c00h
+	int 21h
+code ends
+
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br></div></div><h3 id="_15"><a href="#_15" class="header-anchor">#</a> 15</h3> <div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code
+stack segment
+	db 128 dup(0)
+stack ends
+code segment
+start:
+	mov ax,stack
+	mov ss,ax
+	mov sp,128
+
+	mov ax,cs
+	mov ds,ax
+	mov si,offset int9end - offset int9
+
+	mov ax,0
+	mov es,ax
+	mov di,204h
+
+	cld
+	rep movsb
+
+	push es:[9*4]
+	pop es:[200h]
+	push es:[9*4+2]
+	pop es:[202h]
+
+	cli
+	mov word ptr es:[9*4],204h
+	mov word ptr es:[9*4+2],0
+	sti
+
+	mov ax,4c00h
+	int 21h
+
+int9:
+	push ax
+	push bx
+	push cx
+	push es
+
+	mov ax,0b800h
+	mov es,ax
+
+	in al,60h
+	cmp al,9eh
+	je int9do
+
+	pushf
+	call dword ptr cs:[200h]	;此处存放原本的int9中断程序
+	jmp int9ret
+
+int9do:
+	mov al,'A'
+	mov bx,0
+	mov cx,2000
+
+s:
+	mov es:[bx],al
+	add bx,2
+	loop s
+
+int9ret:
+	pop es
+	pop cx
+	pop bx
+	pop ax
+	iret
+
+int9end:
+	nop
+code ends
+
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br></div></div><h3 id="_17"><a href="#_17" class="header-anchor">#</a> 17</h3> <div class="language-masm line-numbers-mode"><pre class="language-text"><code>assume cs:code
+
+code segment
+start:
+	mov ax,cs
+	mov ds,ax
+	mov si,offset int7ch_start
+
+	mov ax,0
+	mov es,ax
+	mov di,200h
+
+	mov cx,offset int7ch_end - offset int7ch_start
+	cld
+	rep movsb
+
+	cli
+    mov word ptr es:[4*7ch],200h
+    mov word ptr es:[4*7ch+2],0
+    sti
+
+    mov ax,4c00h
+    int 21h
+
+int7ch_start:
+	push ax
+	push cx
+	push dx
+
+	mov al,1
+
+	cmp ah,0
+	je int7ch_read
+
+	cmp ah,1
+	je int7ch_write
+
+int7ch_read:
+	call int7ch_logic_to_physics
+	mov ah,2
+	jmp int7ch_io
+
+int7ch_write:
+	call int7ch_logic_to_physics
+	mov ah,3
+	jmp int7ch_io
+
+int7ch_logic_to_physics:
+	push ax
+	push bx
+
+	mov ax,dx
+	mov dx,0
+	mov cx,1440
+	div cx
+	; dh = dx/1440商 -&gt; 面号
+	mov dh,al
+	; al = dx/1440余
+	mov ax,dx
+
+	mov cl,18
+	div cl
+	; al = (dx/1440)/18商 -&gt; 磁道号
+	; ah = (dx/1440)/18余 -&gt; 扇区号 - 1
+	inc ah
+
+	mov ch,al
+	mov cl,ah
+	mov dl,0
+
+	pop bx
+	pop ax
+	ret
+
+int7ch_io:
+	int 13h
+
+int7ch_ret:
+	pop dx
+	pop cx
+	pop ax
+	iret
+
+int7ch_end:
+	nop
+
+code ends
+
+end start
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2023/9/3 10:07:45</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="Sakura" data-v-248d85d6><canvas id="canvas_sakura" style="z-index:2;" data-v-248d85d6></canvas></div><!----><div class="RibbonAnimation"></div><div id="goTop" class="hide-cat" data-v-bf92849a></div><div></div><div id="live2d-widget" class="live2d-widget-container" style="position:fixed;left:65px;bottom:0px;width:135px;height:300px;z-index:99999;opacity:1;pointer-events:none;"><canvas id="live2d_canvas" width="135" height="300" class="live2d_canvas" style="position:absolute;left:0px;top:0px;width:135px;height:300px;"></canvas></div></div></div>
+    <script src="/assets/js/app.0b2a8564.js" defer></script><script src="/assets/js/3.0afba0d4.js" defer></script><script src="/assets/js/1.d9ada6a7.js" defer></script><script src="/assets/js/51.d78ac180.js" defer></script>
+  </body>
+</html>
